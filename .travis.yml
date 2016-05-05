@@ -1,22 +1,23 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - npm install phantomjs-prebuilt
-
+- npm config set spin false
+- npm install -g bower
+- npm install phantomjs-prebuilt
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: mOG4vTELZjrMpqigkBr1n70Yxp4o3QO6VJ6Uas437Y8wmL3nE79nlHdfmw6/YAOVpyTKbZyosp3y2eG7/liigBOUVZublq4teQCYJCFHLbfoXFAhUV06hDWNatKbJqaHXWgHQN7VPJT6LQQwk30tyo1RazWPEqrKT6/i8o7QghFYCTxbuT1XMe0YfZQnW/e7ZX7DuWNRnq0Ti+y960cC8rCAyYAZuB6Hr+64kLpTQ83HC6yHMn2pxcwQvDjQsNSFDfJrtQZAwccy7z/pX/tt4qoM2Ujq/LSqOX3A6SrcR7qNHodBfwuga6h4tESS41rbPetNs1EZyFT5nUCKGzr6Od/KepfPe1jMDV3Ruk+Oa9YlA+Zj1RlUZRy64tM2UQcS0UG99KxNQdbIiqkWKfhybTLJDeAe0AlMIGT+8FxtJl/zpP3V17HeiycSyBOwNVfqX5iXw2VVGat9yUsZYzZ/PNV6Eix86js18BxgBgkIDh81HPZNF9Td0sclKGeBljd7c6poDyaVA7W3FPwoBw+DTiJyCdjBrrvScQhJLMTlTS2MeDO2K205KVOCcAUIU288DvSWuY3KRrsZlnhCv8HgDVdV3P/YgRtMnRVameYatWHOMCer/lpOHH1FWzkmcASn5mf/gKzeH65JS7JTcHwi7nCAYOhpx2zEf4vJ4NC7v7M=
+  app: serene-fortress-38185
+  on:
+    repo: egosapien/Ember-Sandbox
